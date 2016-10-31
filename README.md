@@ -1,11 +1,11 @@
 # Smart App Rate
 
-If the user rates the app below the threshold rating defined, the dialog will change into a feedback form. Otherwise, It will take the user to the
+Smart app rate dialog for Android which takes user rating into consideration. If the user rates the app below the threshold rating defined, the dialog will change into a feedback form. Otherwise, It will take the user to the
 Google PlayStore.
 
 ![](preview/preview.png)
 
-**If you want the dialog to appear on the Nth session of the app, just add the `session(N) to the dialog builder
+**If you want the dialog to appear on the Nth session of the app, just add the `session(N)` to the dialog builder
  and move the code to the onCreate() method of your Activity class. The dialog will appear when the app is opened for the Nth time.**
 
 ##How to use
@@ -43,6 +43,8 @@ final RatingDialog ratingDialog = new RatingDialog.Builder(this)
 
                 ratingDialog.show();
 ```
+
+Remove the `threshold()` from the builder if you don't want to show the feedback form to the user.
 
 ##Installation
 
