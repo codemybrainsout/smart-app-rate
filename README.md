@@ -7,8 +7,8 @@ Google PlayStore.
 
 ## **Features**
 - Auto fetches the app icon to appear on top of the dialog
-- App session count to make the dialog appear on the app open event
-- Feedback form if the user rates below the minimum threshold
+- App session count to make the dialog appear on the defined app open event
+- Opens Feedback form if the user rates below the minimum threshold
 - Customizable title, positive button and negative button texts
 - Customizable button colors and backgrounds
 
@@ -21,6 +21,7 @@ Use the dialog builder class to customize the rating dialog to match your app's 
 ```java
 final RatingDialog ratingDialog = new RatingDialog.Builder(this)
                         .icon(drawable)
+                        .session(7)
                         .threshold(3)
                         .title("How was your experience with us?")
                         .titleTextColor(R.color.black)
