@@ -5,8 +5,8 @@ Google PlayStore.
 
 ![](preview/preview.png)
 
-**If you want the dialog to appear on the Nth session of the app, just add the `session(N)` to the dialog builder
- and move the code to the onCreate() method of your Activity class. The dialog will appear when the app is opened for the Nth time.**
+If you want the dialog to appear on the Nth session of the app, just add the `session(N)` to the dialog builder
+ and move the code to the `onCreate()` method of your Activity class. The dialog will appear when the app is opened for the Nth time.
 
 ##How to use
 Use the dialog builder class to customize the rating dialog to match your app's UI.
