@@ -38,12 +38,6 @@ public class MainActivity extends AppCompatActivity {
         final RatingDialog ratingDialog = new RatingDialog.Builder(this)
                 .threshold(3)
                 .ratingBarColor(R.color.yellow)
-                .onRatingChanged(new RatingDialog.RatingDialogListener() {
-                    @Override
-                    public void onRatingSelected(float rating, boolean thresholdCleared) {
-
-                    }
-                })
                 .onRatingBarFormSumbit(new RatingDialog.RatingDialogFormListener() {
                     @Override
                     public void onFormSubmitted(String feedback) {

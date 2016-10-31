@@ -9,6 +9,7 @@ Google PlayStore.
 - Auto fetches the app icon to appear on top of the dialog
 - App session count to make the dialog appear on the defined app open event
 - Opens Feedback form if the user rates below the minimum threshold
+- Extracts the accent color from your app's theme
 - Customizable title, positive button and negative button texts
 - Customizable button colors and backgrounds
 
@@ -16,7 +17,26 @@ If you want the dialog to appear on the Nth session of the app, just add the `se
  and move the code to the `onCreate()` method of your Activity class. The dialog will appear when the app is opened for the Nth time.
 
 ##How to use
-Use the dialog builder class to customize the rating dialog to match your app's UI.
+
+Use the dialog as it is
+
+```java
+
+final RatingDialog ratingDialog = new RatingDialog.Builder(this)
+                .threshold(3)
+                .ratingBarColor(R.color.yellow)
+                .onRatingBarFormSumbit(new RatingDialog.RatingDialogFormListener() {
+                    @Override
+                    public void onFormSubmitted(String feedback) {
+
+                    }
+                }).build();
+
+        ratingDialog.show();
+
+```
+
+or use the dialog builder class to customize the rating dialog to match your app's UI.
 
 ```java
 final RatingDialog ratingDialog = new RatingDialog.Builder(this)
