@@ -113,11 +113,11 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
         context.getTheme().resolveAttribute(R.attr.colorAccent, typedValue, true);
         int color = typedValue.data;
 
-        tvTitle.setTextColor(builder.titleTextColor != 0 ? builder.titleTextColor : ContextCompat.getColor(context, R.color.black));
+        tvTitle.setTextColor(builder.titleTextColor != 0 ? ContextCompat.getColor(context, builder.titleTextColor) : ContextCompat.getColor(context, R.color.black));
         tvPositive.setTextColor(builder.positiveTextColor != 0 ? ContextCompat.getColor(context, builder.positiveTextColor) : color);
         tvNegative.setTextColor(builder.negativeTextColor != 0 ? ContextCompat.getColor(context, builder.negativeTextColor) : ContextCompat.getColor(context, R.color.grey_500));
 
-        tvFeedback.setTextColor(builder.titleTextColor != 0 ? builder.titleTextColor : ContextCompat.getColor(context, R.color.black));
+        tvFeedback.setTextColor(builder.titleTextColor != 0 ? ContextCompat.getColor(context, builder.titleTextColor) : ContextCompat.getColor(context, R.color.black));
         tvSubmit.setTextColor(builder.positiveTextColor != 0 ? ContextCompat.getColor(context, builder.positiveTextColor) : color);
         tvCancel.setTextColor(builder.negativeTextColor != 0 ? ContextCompat.getColor(context, builder.negativeTextColor) : ContextCompat.getColor(context, R.color.grey_500));
 
@@ -294,10 +294,10 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
     }
 
     private void showNever() {
-        /*sharedpreferences = context.getSharedPreferences(MyPrefs, Context.MODE_PRIVATE);
+        sharedpreferences = context.getSharedPreferences(MyPrefs, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedpreferences.edit();
         editor.putBoolean(SHOW_NEVER, true);
-        editor.commit();*/
+        editor.commit();
     }
 
     public static class Builder {

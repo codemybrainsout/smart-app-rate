@@ -36,20 +36,11 @@ public class MainActivity extends AppCompatActivity {
     private void showDialog() {
 
         final RatingDialog ratingDialog = new RatingDialog.Builder(this)
-                .session(5)
-                .icon()
+                .session(1)
                 .threshold(3)
-                .title()
-                .titleTextColor()
-                .positiveButtonText()
-                .negativeButtonText()
-                .positiveButtonTextColor()
-                .negativeButtonTextColor()
-                .formTitle()
-                .formHint()
-                .formSubmitText()
-                .formCancelText()
                 .ratingBarColor(R.color.yellow)
+                .positiveButtonBackgroundColor(R.drawable.button_selector_positive)
+                .negativeButtonBackgroundColor(R.drawable.button_selector_negative)
                 .onRatingChanged(new RatingDialog.RatingDialogListener() {
                     @Override
                     public void onRatingSelected(float rating, boolean thresholdCleared) {
