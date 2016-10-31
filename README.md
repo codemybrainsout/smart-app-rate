@@ -24,7 +24,7 @@ Use the dialog as it is
 
 final RatingDialog ratingDialog = new RatingDialog.Builder(this)
                 .threshold(3)
-                .ratingBarColor(R.color.yellow)
+                .session(7)
                 .onRatingBarFormSumbit(new RatingDialog.RatingDialogFormListener() {
                     @Override
                     public void onFormSubmitted(String feedback) {
