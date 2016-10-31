@@ -7,8 +7,8 @@ Google PlayStore.
 
 ## **Features**
 - Auto fetches the app icon to appear on top of the dialog
-- App session coun to make the dialog appear on the app open event
-- Minimum threshold to open the feedback form
+- App session count to make the dialog appear on the app open event
+- Feedback form if the user rates below the minimum threshold
 - Customizable title, positive button and negative button texts
 - Customizable button colors and backgrounds
 
