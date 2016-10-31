@@ -1,1 +1,3 @@
-# smart-app-rate
+# Smart App Rate
+
+![](preview/preview.png)

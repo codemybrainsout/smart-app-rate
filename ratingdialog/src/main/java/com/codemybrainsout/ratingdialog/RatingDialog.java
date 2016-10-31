@@ -306,7 +306,7 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
         private String title, positiveText, negativeText;
         private String formTitle, submitText, cancelText, feedbackFormHint;
         private int positiveTextColor, negativeTextColor, titleTextColor, ratingBarColor;
-        public int positiveBackgroundColor, negativeBackgroundColor;
+        private int positiveBackgroundColor, negativeBackgroundColor;
         private RatingDialogListener ratingDialogListener;
         private RatingDialogFormListener ratingDialogFormListener;
         private Drawable drawable;
