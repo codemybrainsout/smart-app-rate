@@ -1,12 +1,12 @@
 # Smart App Rate
 
-![](preview/preview.png)
-
-If the user rates below the threshold rating defined, the dialog will change into a feedback form. Otherwise, It will take the user to the
+If the user rates the app below the threshold rating defined, the dialog will change into a feedback form. Otherwise, It will take the user to the
 Google PlayStore.
 
-**If you want the dialog to appear on Nth session of the app, just add the ```java session(N)``` to the dialog builder
- and move the code to the onCreate() method of your Activity class. The dialog will appear when the app is opened for Nth time.**
+![](preview/preview.png)
+
+**If you want the dialog to appear on the Nth session of the app, just add the `session(N) to the dialog builder
+ and move the code to the onCreate() method of your Activity class. The dialog will appear when the app is opened for the Nth time.**
 
 ##How to use
 Use the dialog builder class to customize the rating dialog to match your app's UI.
@@ -43,6 +43,11 @@ final RatingDialog ratingDialog = new RatingDialog.Builder(this)
 
                 ratingDialog.show();
 ```
+
+##Installation
+
+###Gradle
+Add it as a dependency in your app's build.gradle file
 
 ```groovy
 dependencies {
