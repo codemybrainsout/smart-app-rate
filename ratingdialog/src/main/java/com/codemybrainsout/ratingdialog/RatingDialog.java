@@ -26,6 +26,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by ahulr on 24-10-2016.
@@ -227,7 +228,11 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
 
     private void openPlaystore(Context context) {
         final Uri marketUri = Uri.parse("market://details?id=" + context.getPackageName());
-        context.startActivity(new Intent(Intent.ACTION_VIEW, marketUri));
+        try {
+            context.startActivity(new Intent(Intent.ACTION_VIEW, marketUri));
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(context, "Coudn't find PlayStore on this device", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public TextView getTitleTextView() {
