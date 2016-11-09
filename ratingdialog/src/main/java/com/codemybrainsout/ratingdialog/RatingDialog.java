@@ -52,7 +52,7 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
     private String defaultFormTitle = "Feedback";
     private String defaultSubmitText = "Submit";
     private String defaultCancelText = "Cancel";
-    private String defaultHint = "Suggest us what went wrong and we'll work on it.";
+    private String defaultHint = "Suggest us what went wrong and \nwe'll work on it.";
 
 
     private float threshold;
