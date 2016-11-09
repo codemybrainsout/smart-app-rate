@@ -72,7 +72,7 @@ final RatingDialog ratingDialog = new RatingDialog.Builder(this)
                 ratingDialog.show();
 ```
 
-Note: Remove the `threshold()` from the builder if you don't want to show the feedback form to the user.
+Note: Remove `session()` if you're showing the dialog on a click event and remove the `threshold()` from the builder if you don't want to show the feedback form to the user.
 
 ##Installation
 
@@ -81,7 +81,7 @@ Add it as a dependency in your app's build.gradle file
 
 ```groovy
 dependencies {
-    compile 'com.codemybrainsout.rating:ratingdialog:1.0.2'
+    compile 'com.codemybrainsout.rating:ratingdialog:1.0.3'
 }
 ```
 
