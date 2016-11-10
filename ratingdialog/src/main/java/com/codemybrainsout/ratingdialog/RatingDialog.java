@@ -152,6 +152,10 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
         tvNegative.setOnClickListener(this);
         tvSubmit.setOnClickListener(this);
         tvCancel.setOnClickListener(this);
+
+        if (session == 1) {
+            tvNegative.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -277,7 +281,12 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
 
     private boolean checkIfSessionMatches(int session) {
 
+        if (session == 1) {
+            return true;
+        }
+
         sharedpreferences = context.getSharedPreferences(MyPrefs, Context.MODE_PRIVATE);
+
         if (sharedpreferences.getBoolean(SHOW_NEVER, false)) {
             return false;
         }
@@ -289,10 +298,15 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
             editor.putInt(SESSION_COUNT, 1);
             editor.commit();
             return true;
-        } else {
+        } else if (session > count) {
             count++;
             SharedPreferences.Editor editor = sharedpreferences.edit();
             editor.putInt(SESSION_COUNT, count);
+            editor.commit();
+            return false;
+        } else {
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            editor.putInt(SESSION_COUNT, 2);
             editor.commit();
             return false;
         }
