@@ -3,7 +3,6 @@ package com.codemybrainsout.ratingdialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -11,7 +10,6 @@ import android.graphics.drawable.LayerDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.ColorRes;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.app.AppCompatDialog;
@@ -121,6 +119,10 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
         tvFeedback.setTextColor(builder.titleTextColor != 0 ? ContextCompat.getColor(context, builder.titleTextColor) : ContextCompat.getColor(context, R.color.black));
         tvSubmit.setTextColor(builder.positiveTextColor != 0 ? ContextCompat.getColor(context, builder.positiveTextColor) : color);
         tvCancel.setTextColor(builder.negativeTextColor != 0 ? ContextCompat.getColor(context, builder.negativeTextColor) : ContextCompat.getColor(context, R.color.grey_500));
+
+        if (builder.feedBackTextColor != 0) {
+            etFeedback.setTextColor(ContextCompat.getColor(context, builder.feedBackTextColor));
+        }
 
         if (builder.positiveBackgroundColor != 0) {
             tvPositive.setBackgroundResource(builder.positiveBackgroundColor);
@@ -324,7 +326,7 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
         private final Context context;
         private String title, positiveText, negativeText;
         private String formTitle, submitText, cancelText, feedbackFormHint;
-        private int positiveTextColor, negativeTextColor, titleTextColor, ratingBarColor;
+        private int positiveTextColor, negativeTextColor, titleTextColor, ratingBarColor, feedBackTextColor;
         private int positiveBackgroundColor, negativeBackgroundColor;
         private RatingDialogListener ratingDialogListener;
         private RatingDialogFormListener ratingDialogFormListener;
@@ -430,6 +432,11 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
 
         public Builder ratingBarColor(int ratingBarColor) {
             this.ratingBarColor = ratingBarColor;
+            return this;
+        }
+
+        public Builder feedbackTextColor(int feedBackTextColor) {
+            this.feedBackTextColor = feedBackTextColor;
             return this;
         }
 
