@@ -237,7 +237,7 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
         try {
             context.startActivity(new Intent(Intent.ACTION_VIEW, marketUri));
         } catch (android.content.ActivityNotFoundException ex) {
-            Toast.makeText(context, "Coudn't find PlayStore on this device", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Couldn't find PlayStore on this device", Toast.LENGTH_SHORT).show();
         }
     }
 
