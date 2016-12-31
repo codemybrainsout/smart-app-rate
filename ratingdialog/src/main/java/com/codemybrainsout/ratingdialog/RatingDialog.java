@@ -45,14 +45,6 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
     private EditText etFeedback;
     private LinearLayout ratingButtons, feedbackButtons;
 
-    private String defaultTitle = "How was your experience with us?";
-    private String defaultPositiveText = "Maybe Later";
-    private String defaultNegativeText = "Never";
-    private String defaultFormTitle = "Feedback";
-    private String defaultSubmitText = "Submit";
-    private String defaultCancelText = "Cancel";
-    private String defaultHint = "Suggest us what went wrong and \nwe'll work on it.";
-
 
     private float threshold;
     private int session;
@@ -99,14 +91,14 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
 
     private void init() {
 
-        tvTitle.setText(TextUtils.isEmpty(builder.title) ? defaultTitle : builder.title);
-        tvPositive.setText(TextUtils.isEmpty(builder.positiveText) ? defaultPositiveText : builder.positiveText);
-        tvNegative.setText(TextUtils.isEmpty(builder.negativeText) ? defaultNegativeText : builder.negativeText);
+        tvTitle.setText(builder.title);
+        tvPositive.setText(builder.positiveText);
+        tvNegative.setText(builder.negativeText);
 
-        tvFeedback.setText(TextUtils.isEmpty(builder.formTitle) ? defaultFormTitle : builder.formTitle);
-        tvSubmit.setText(TextUtils.isEmpty(builder.submitText) ? defaultSubmitText : builder.submitText);
-        tvCancel.setText(TextUtils.isEmpty(builder.cancelText) ? defaultCancelText : builder.cancelText);
-        etFeedback.setHint(TextUtils.isEmpty(builder.feedbackFormHint) ? defaultHint : builder.feedbackFormHint);
+        tvFeedback.setText(builder.formTitle);
+        tvSubmit.setText(builder.submitText);
+        tvCancel.setText(builder.cancelText);
+        etFeedback.setHint(builder.feedbackFormHint);
 
         TypedValue typedValue = new TypedValue();
         context.getTheme().resolveAttribute(R.attr.colorAccent, typedValue, true);
@@ -337,6 +329,17 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
 
         public Builder(Context context) {
             this.context = context;
+            initText();
+        }
+
+        private void initText(){
+            title = context.getString(R.string.rating_dialog_experience);
+            positiveText = context.getString(R.string.rating_dialog_maybe_later);
+            negativeText = context.getString(R.string.rating_dialog_never);
+            formTitle = context.getString(R.string.rating_dialog_feedback_title);
+            submitText = context.getString(R.string.rating_dialog_submit);
+            cancelText = context.getString(R.string.rating_dialog_cancel);
+            feedbackFormHint = context.getString(R.string.rating_dialog_suggestions);
         }
 
         public Builder session(int session) {

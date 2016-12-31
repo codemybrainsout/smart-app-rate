@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rating_dialog_experience">Wie finden Sie unsere App?</string>
+    <string name="rating_dialog_maybe_later">Vielleicht später</string>
+    <string name="rating_dialog_never">Niemals</string>
+    <string name="rating_dialog_feedback_title">Feedback</string>
+    <string name="rating_dialog_submit">Abschicken</string>
+    <string name="rating_dialog_cancel">Abbrechen</string>
+    <string name="rating_dialog_suggestions">Sagen Sie uns was Ihnen nicht gefällt und wir arbeiten daran!</string>
+</resources>
