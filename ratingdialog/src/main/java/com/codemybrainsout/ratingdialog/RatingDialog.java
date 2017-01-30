@@ -45,7 +45,6 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
     private EditText etFeedback;
     private LinearLayout ratingButtons, feedbackButtons;
 
-
     private float threshold;
     private int session;
     private boolean thresholdPassed = true;
@@ -59,13 +58,6 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
         this.threshold = builder.threshold;
     }
 
-    public interface RatingDialogListener {
-        void onRatingSelected(float rating, boolean thresholdCleared);
-    }
-
-    public interface RatingDialogFormListener {
-        void onFormSubmitted(String feedback);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -192,26 +184,47 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
     @Override
     public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
 
+
         if (ratingBar.getRating() >= threshold) {
-
             thresholdPassed = true;
-            openPlaystore(context);
-            dismiss();
 
+            if (builder.ratingThresholdClearedListener == null) {
+                setRatingThresholdClearedListener();
+            }
+            builder.ratingThresholdClearedListener.onThresholdCleared(this, ratingBar.getRating(), thresholdPassed);
 
         } else {
-
             thresholdPassed = false;
-            openForm();
 
+            if (builder.ratingThresholdFailedListener == null) {
+                setRatingThresholdFailedListener();
+            }
+            builder.ratingThresholdFailedListener.onThresholdFailed(this, ratingBar.getRating(), thresholdPassed);
         }
 
         if (builder.ratingDialogListener != null) {
             builder.ratingDialogListener.onRatingSelected(ratingBar.getRating(), thresholdPassed);
         }
-
         showNever();
+    }
 
+    private void setRatingThresholdClearedListener() {
+        builder.ratingThresholdClearedListener = new Builder.RatingThresholdClearedListener() {
+            @Override
+            public void onThresholdCleared(RatingDialog ratingDialog, float rating, boolean thresholdCleared) {
+                openPlaystore(context);
+                dismiss();
+            }
+        };
+    }
+
+    private void setRatingThresholdFailedListener() {
+        builder.ratingThresholdFailedListener = new Builder.RatingThresholdFailedListener() {
+            @Override
+            public void onThresholdFailed(RatingDialog ratingDialog, float rating, boolean thresholdCleared) {
+                openForm();
+            }
+        };
     }
 
     private void openForm() {
@@ -320,19 +333,37 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
         private String formTitle, submitText, cancelText, feedbackFormHint;
         private int positiveTextColor, negativeTextColor, titleTextColor, ratingBarColor, feedBackTextColor;
         private int positiveBackgroundColor, negativeBackgroundColor;
-        private RatingDialogListener ratingDialogListener;
+        private RatingThresholdClearedListener ratingThresholdClearedListener;
+        private RatingThresholdFailedListener ratingThresholdFailedListener;
         private RatingDialogFormListener ratingDialogFormListener;
+        private RatingDialogListener ratingDialogListener;
         private Drawable drawable;
 
         private int session = 1;
         private float threshold = 1;
+
+        public interface RatingThresholdClearedListener {
+            void onThresholdCleared(RatingDialog ratingDialog, float rating, boolean thresholdCleared);
+        }
+
+        public interface RatingThresholdFailedListener {
+            void onThresholdFailed(RatingDialog ratingDialog, float rating, boolean thresholdCleared);
+        }
+
+        public interface RatingDialogFormListener {
+            void onFormSubmitted(String feedback);
+        }
+
+        public interface RatingDialogListener {
+            void onRatingSelected(float rating, boolean thresholdCleared);
+        }
 
         public Builder(Context context) {
             this.context = context;
             initText();
         }
 
-        private void initText(){
+        private void initText() {
             title = context.getString(R.string.rating_dialog_experience);
             positiveText = context.getString(R.string.rating_dialog_maybe_later);
             negativeText = context.getString(R.string.rating_dialog_never);
@@ -402,6 +433,15 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
             return this;
         }
 
+        public Builder onThresholdCleared(RatingThresholdClearedListener ratingThresholdClearedListener) {
+            this.ratingThresholdClearedListener = ratingThresholdClearedListener;
+            return this;
+        }
+
+        public Builder onThresholdFailed(RatingThresholdFailedListener ratingThresholdFailedListener) {
+            this.ratingThresholdFailedListener = ratingThresholdFailedListener;
+            return this;
+        }
 
         public Builder onRatingChanged(RatingDialogListener ratingDialogListener) {
             this.ratingDialogListener = ratingDialogListener;

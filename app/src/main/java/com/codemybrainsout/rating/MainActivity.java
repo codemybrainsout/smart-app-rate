@@ -1,15 +1,9 @@
 package com.codemybrainsout.rating;
 
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 
 import com.codemybrainsout.ratingdialog.RatingDialog;
@@ -39,12 +33,14 @@ public class MainActivity extends AppCompatActivity {
                 .session(3)
                 .threshold(3)
                 .ratingBarColor(R.color.yellow)
-                .onRatingBarFormSumbit(new RatingDialog.RatingDialogFormListener() {
+                .onRatingBarFormSumbit(new RatingDialog.Builder.RatingDialogFormListener() {
                     @Override
                     public void onFormSubmitted(String feedback) {
-
+                        Log.i(TAG,"Feedback:" + feedback);
                     }
-                }).build();
+                })
+                .build();
+
 
         ratingDialog.show();
     }

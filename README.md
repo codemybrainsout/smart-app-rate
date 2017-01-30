@@ -7,11 +7,12 @@ Google PlayStore.
 
 ## **Features**
 - Auto fetches the app icon to appear on top of the dialog
-- App session count to make the dialog appear on the defined app open event
+- Make the dialog appear on a defined app session
 - Opens Feedback form if the user rates below the minimum threshold
 - Extracts the accent color from your app's theme
 - Customizable title, positive button and negative button texts
 - Customizable button colors and backgrounds
+- Override dialog redirection to Google Play or Feedback form according to your needs
 
 If you want the dialog to appear on the Nth session of the app, just add the `session(N)` to the dialog builder method
  and move the code to the `onCreate()` method of your Activity class. The dialog will appear when the app is opened for the Nth time.
@@ -56,12 +57,26 @@ final RatingDialog ratingDialog = new RatingDialog.Builder(this)
                         .ratingBarColor(R.color.yellow)
                         .positiveButtonBackgroundColor(R.drawable.button_selector_positive)
                         .negativeButtonBackgroundColor(R.drawable.button_selector_negative)
+                        .onThresholdCleared(new RatingDialog.Builder.RatingThresholdClearedListener() {
+                                           @Override
+                                           public void onThresholdCleared(RatingDialog ratingDialog, float rating, boolean thresholdCleared) {
+                                               //do something
+                                               ratingDialog.dismiss();
+                                           }
+                                       })
+                        .onThresholdFailed(new RatingDialog.Builder.RatingThresholdFailedListener() {
+                                           @Override
+                                           public void onThresholdFailed(RatingDialog ratingDialog, float rating, boolean thresholdCleared) {
+                                               //do something
+                                               ratingDialog.dismiss();
+                                           }
+                                       })
                         .onRatingChanged(new RatingDialog.RatingDialogListener() {
-                            @Override
-                            public void onRatingSelected(float rating, boolean thresholdCleared) {
+                                                                   @Override
+                                                                   public void onRatingSelected(float rating, boolean thresholdCleared) {
 
-                            }
-                        })
+                                                                   }
+                                                               })
                         .onRatingBarFormSumbit(new RatingDialog.RatingDialogFormListener() {
                             @Override
                             public void onFormSubmitted(String feedback) {
@@ -75,6 +90,8 @@ final RatingDialog ratingDialog = new RatingDialog.Builder(this)
 ###Note
 * Don't use `session()` if you want to show the dialog on a click event.
 * Remove the `threshold()` from the builder if you don't want to show the feedback form to the user.
+* Use `.onThresholdCleared()` to override the default redirection to Google Play.
+* Use `.onThresholdFailed()` to show your custom feedback form.
 
 ##Installation
 
@@ -83,7 +100,7 @@ Add it as a dependency in your app's build.gradle file
 
 ```groovy
 dependencies {
-    compile 'com.codemybrainsout.rating:ratingdialog:1.0.4'
+    compile 'com.codemybrainsout.rating:ratingdialog:1.0.6'
 }
 ```
 
