@@ -72,11 +72,11 @@ final RatingDialog ratingDialog = new RatingDialog.Builder(this)
                                            }
                                        })
                         .onRatingChanged(new RatingDialog.RatingDialogListener() {
-                                                                   @Override
-                                                                   public void onRatingSelected(float rating, boolean thresholdCleared) {
+                                            @Override
+                                            public void onRatingSelected(float rating, boolean thresholdCleared) {
 
-                                                                   }
-                                                               })
+                                            }
+                                       })
                         .onRatingBarFormSumbit(new RatingDialog.RatingDialogFormListener() {
                             @Override
                             public void onFormSubmitted(String feedback) {
@@ -90,8 +90,8 @@ final RatingDialog ratingDialog = new RatingDialog.Builder(this)
 ###Note
 * Don't use `session()` if you want to show the dialog on a click event.
 * Remove the `threshold()` from the builder if you don't want to show the feedback form to the user.
-* Use `.onThresholdCleared()` to override the default redirection to Google Play.
-* Use `.onThresholdFailed()` to show your custom feedback form.
+* Use `onThresholdCleared()` to override the default redirection to Google Play.
+* Use `onThresholdFailed()` to show your custom feedback form.
 
 ##Installation
 
