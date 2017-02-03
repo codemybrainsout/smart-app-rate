@@ -71,13 +71,13 @@ final RatingDialog ratingDialog = new RatingDialog.Builder(this)
                                                ratingDialog.dismiss();
                                            }
                                        })
-                        .onRatingChanged(new RatingDialog.RatingDialogListener() {
+                        .onRatingChanged(new RatingDialog.Builder.RatingDialogListener() {
                                             @Override
                                             public void onRatingSelected(float rating, boolean thresholdCleared) {
 
                                             }
                                        })
-                        .onRatingBarFormSumbit(new RatingDialog.RatingDialogFormListener() {
+                        .onRatingBarFormSumbit(new RatingDialog.Builder.RatingDialogFormListener() {
                             @Override
                             public void onFormSubmitted(String feedback) {
 
@@ -100,7 +100,7 @@ Add it as a dependency in your app's build.gradle file
 
 ```groovy
 dependencies {
-    compile 'com.codemybrainsout.rating:ratingdialog:1.0.6'
+    compile 'com.codemybrainsout.rating:ratingdialog:1.0.7'
 }
 ```
 
