@@ -123,7 +123,8 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
                 LayerDrawable stars = (LayerDrawable) ratingBar.getProgressDrawable();
                 stars.getDrawable(2).setColorFilter(ContextCompat.getColor(context, builder.ratingBarColor), PorterDuff.Mode.SRC_ATOP);
                 stars.getDrawable(1).setColorFilter(ContextCompat.getColor(context, builder.ratingBarColor), PorterDuff.Mode.SRC_ATOP);
-                stars.getDrawable(0).setColorFilter(ContextCompat.getColor(context, R.color.grey_200), PorterDuff.Mode.SRC_ATOP);
+                int ratingBarBackgroundColor = builder.ratingBarBackgroundColor != 0 ? builder.ratingBarBackgroundColor : R.color.grey_200;
+                stars.getDrawable(0).setColorFilter(ContextCompat.getColor(context, ratingBarBackgroundColor), PorterDuff.Mode.SRC_ATOP);
             } else {
                 Drawable stars = ratingBar.getProgressDrawable();
                 DrawableCompat.setTint(stars, ContextCompat.getColor(context, builder.ratingBarColor));
@@ -331,7 +332,7 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
         private final Context context;
         private String title, positiveText, negativeText;
         private String formTitle, submitText, cancelText, feedbackFormHint;
-        private int positiveTextColor, negativeTextColor, titleTextColor, ratingBarColor, feedBackTextColor;
+        private int positiveTextColor, negativeTextColor, titleTextColor, ratingBarColor, ratingBarBackgroundColor, feedBackTextColor;
         private int positiveBackgroundColor, negativeBackgroundColor;
         private RatingThresholdClearedListener ratingThresholdClearedListener;
         private RatingThresholdFailedListener ratingThresholdFailedListener;
@@ -475,6 +476,11 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
 
         public Builder ratingBarColor(int ratingBarColor) {
             this.ratingBarColor = ratingBarColor;
+            return this;
+        }
+
+        public Builder ratingBarBackgroundColor(int ratingBarBackgroundColor) {
+            this.ratingBarBackgroundColor = ratingBarBackgroundColor;
             return this;
         }
 
