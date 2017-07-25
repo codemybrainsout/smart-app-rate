@@ -5,7 +5,7 @@ Google PlayStore.
 
 ![](preview/preview.png)
 
-## **Features**
+## Features
 - Auto fetches the app icon to appear on top of the dialog
 - Make the dialog appear on a defined app session
 - Opens Feedback form if the user rates below the minimum threshold
@@ -17,7 +17,7 @@ Google PlayStore.
 If you want the dialog to appear on the Nth session of the app, just add the `session(N)` to the dialog builder method
  and move the code to the `onCreate()` method of your Activity class. The dialog will appear when the app is opened for the Nth time.
 
-##How to use
+## How to use
 
 Use the dialog as it is
 
@@ -26,7 +26,7 @@ Use the dialog as it is
 final RatingDialog ratingDialog = new RatingDialog.Builder(this)
                 .threshold(3)
                 .session(7)
-                .onRatingBarFormSumbit(new RatingDialog.RatingDialogFormListener() {
+                .onRatingBarFormSumbit(new RatingDialog.Builder.RatingDialogFormListener() {
                     @Override
                     public void onFormSubmitted(String feedback) {
 
@@ -87,15 +87,15 @@ final RatingDialog ratingDialog = new RatingDialog.Builder(this)
                 ratingDialog.show();
 ```
 
-###Note
+### Note
 * Don't use `session()` if you want to show the dialog on a click event.
 * Remove the `threshold()` from the builder if you don't want to show the feedback form to the user.
 * Use `onThresholdCleared()` to override the default redirection to Google Play.
 * Use `onThresholdFailed()` to show your custom feedback form.
 
-##Installation
+## Installation
 
-###Gradle
+### Gradle
 Add it as a dependency in your app's build.gradle file
 
 ```groovy
@@ -104,7 +104,7 @@ dependencies {
 }
 ```
 
-##Credits
+## Credits
 
 This project was initiated by **Code My Brains Out**. You can contribute to this project by submitting issues or/and by forking this repo and sending a pull request.
 
@@ -116,7 +116,7 @@ Follow us on:
 
 Author: [Rahul Juneja](https://github.com/ahulr)
 
-#License
+# License
 ```
 Copyright (C) 2016 Code My Brains Out
 
