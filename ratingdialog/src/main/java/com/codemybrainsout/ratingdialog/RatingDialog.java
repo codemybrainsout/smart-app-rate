@@ -238,7 +238,7 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
     }
 
     private void openPlaystore(Context context) {
-        final Uri marketUri = Uri.parse("market://details?id=" + context.getPackageName());
+        final Uri marketUri = Uri.parse(builder.playstoreUrl);
         try {
             context.startActivity(new Intent(Intent.ACTION_VIEW, marketUri));
         } catch (android.content.ActivityNotFoundException ex) {
@@ -329,7 +329,7 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
     public static class Builder {
 
         private final Context context;
-        private String title, positiveText, negativeText;
+        private String title, positiveText, negativeText, playstoreUrl;
         private String formTitle, submitText, cancelText, feedbackFormHint;
         private int positiveTextColor, negativeTextColor, titleTextColor, ratingBarColor, feedBackTextColor;
         private int positiveBackgroundColor, negativeBackgroundColor;
@@ -360,6 +360,8 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
 
         public Builder(Context context) {
             this.context = context;
+            // Set default PlayStore URL
+            this.playstoreUrl = "market://details?id=" + context.getPackageName();
             initText();
         }
 
@@ -480,6 +482,11 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
 
         public Builder feedbackTextColor(int feedBackTextColor) {
             this.feedBackTextColor = feedBackTextColor;
+            return this;
+        }
+
+        public Builder playstoreUrl(String playstoreUrl) {
+            this.playstoreUrl = playstoreUrl;
             return this;
         }
 
