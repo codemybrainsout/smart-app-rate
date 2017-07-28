@@ -63,15 +63,13 @@
             android:layout_marginRight="15dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/edittext_background"
+            android:gravity="top|left"
+            android:inputType="textMultiLine|textCapSentences"
+            android:lines="8"
+            android:maxLines="10"
+            android:minLines="6"
             android:padding="10dp"
-                  
-            android:inputType="textMultiLine|textCapSentences" <!-- Multiline input -->
-            android:lines="8" <!-- Total Lines prior display -->
-            android:minLines="6" <!-- Minimum lines -->
-            android:gravity="top|left" <!-- Cursor Position -->
-            android:maxLines="10" <!-- Maximum Lines -->
-            android:scrollbars="vertical" <!-- Vertical Scroll Bar -->
-                  
+            android:scrollbars="vertical"
             android:textColorHint="@color/grey_400"
             android:visibility="gone" />
 
