@@ -55,8 +55,7 @@ final RatingDialog ratingDialog = new RatingDialog.Builder(this)
                         .formSubmitText("Submit")
                         .formCancelText("Cancel")
                         .ratingBarColor(R.color.yellow)
-                        .positiveButtonBackgroundColor(R.drawable.button_selector_positive)
-                        .negativeButtonBackgroundColor(R.drawable.button_selector_negative)
+                        .playstoreUrl("YOUR_URL")
                         .onThresholdCleared(new RatingDialog.Builder.RatingThresholdClearedListener() {
                                            @Override
                                            public void onThresholdCleared(RatingDialog ratingDialog, float rating, boolean thresholdCleared) {
@@ -100,7 +99,7 @@ Add it as a dependency in your app's build.gradle file
 
 ```groovy
 dependencies {
-    compile 'com.codemybrainsout.rating:ratingdialog:1.0.7'
+    compile 'com.codemybrainsout.rating:ratingdialog:1.0.8'
 }
 ```
 

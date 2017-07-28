@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 .session(3)
                 .threshold(3)
                 .ratingBarColor(R.color.yellow)
+                .playstoreUrl("https://github.com/codemybrainsout/smart-app-rate")
                 .onRatingBarFormSumbit(new RatingDialog.Builder.RatingDialogFormListener() {
                     @Override
                     public void onFormSubmitted(String feedback) {
