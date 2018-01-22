@@ -1,0 +1,9 @@
+<resources>
+    <string name="rating_dialog_experience">Como foi sua experiência conosco?</string>
+    <string name="rating_dialog_maybe_later">Mais tarde</string>
+    <string name="rating_dialog_never">Nunca</string>
+    <string name="rating_dialog_feedback_title">Comentários</string>
+    <string name="rating_dialog_submit">Enviar</string>
+    <string name="rating_dialog_cancel">Cancelar</string>
+    <string name="rating_dialog_suggestions">Sugira-nos o que deu errado e vamos trabalhar nisso!</string>
+</resources>
