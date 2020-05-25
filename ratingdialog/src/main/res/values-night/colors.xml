@@ -2,9 +2,11 @@
 <resources>
 
     <color name="grey_200">#777777</color>
-    <color name="grey_400">#cccccc</color>
-    <color name="grey_500">#e0e0e0</color>
-    <color name="accent">#ec2045</color>
-    <color name="textColor">#ffffff</color>
+    <color name="grey_400">#CCCCCC</color>
+    <color name="grey_500">#E0E0E0</color>
+    <color name="accent">#EC2045</color>
+    <color name="textColor">#FFFFFF</color>
+    <color name="contentBackground">#212121</color>
+    <color name="textField">#424242</color>
 
 </resources>
