@@ -3,7 +3,7 @@ apply plugin: 'com.vanniktech.maven.publish'
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "29.0.2"
+    buildToolsVersion "29.0.3"
 
     defaultConfig {
         minSdkVersion 15
@@ -25,5 +25,5 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "androidx.appcompat:appcompat:1.2.0"
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13.2'
 }
