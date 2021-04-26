@@ -10,9 +10,6 @@ import android.graphics.drawable.LayerDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.graphics.drawable.DrawableCompat;
-import android.support.v7.app.AppCompatDialog;
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.View;
@@ -26,6 +23,10 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatDialog;
+import androidx.core.content.ContextCompat;
+import androidx.core.graphics.drawable.DrawableCompat;
+
 /**
  * Created by ahulr on 24-10-2016.
  */
@@ -34,20 +35,19 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
 
     private static final String SESSION_COUNT = "session_count";
     private static final String SHOW_NEVER = "show_never";
-    private String MyPrefs = "RatingDialog";
+    private final String MyPrefs = "RatingDialog";
     private SharedPreferences sharedpreferences;
 
-    private Context context;
-    private Builder builder;
+    private final Context context;
+    private final Builder builder;
     private TextView tvTitle, tvNegative, tvPositive, tvFeedback, tvSubmit, tvCancel;
     private RatingBar ratingBar;
     private ImageView ivIcon;
     private EditText etFeedback;
     private LinearLayout ratingButtons, feedbackButtons;
 
-    private float threshold;
-    private int session;
-    private boolean thresholdPassed = true;
+    private final float threshold;
+    private final int session;
 
     public RatingDialog(Context context, Builder builder) {
         super(context);
@@ -66,17 +66,17 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
         getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         setContentView(R.layout.dialog_rating);
 
-        tvTitle = (TextView) findViewById(R.id.dialog_rating_title);
-        tvNegative = (TextView) findViewById(R.id.dialog_rating_button_negative);
-        tvPositive = (TextView) findViewById(R.id.dialog_rating_button_positive);
-        tvFeedback = (TextView) findViewById(R.id.dialog_rating_feedback_title);
-        tvSubmit = (TextView) findViewById(R.id.dialog_rating_button_feedback_submit);
-        tvCancel = (TextView) findViewById(R.id.dialog_rating_button_feedback_cancel);
-        ratingBar = (RatingBar) findViewById(R.id.dialog_rating_rating_bar);
-        ivIcon = (ImageView) findViewById(R.id.dialog_rating_icon);
-        etFeedback = (EditText) findViewById(R.id.dialog_rating_feedback);
-        ratingButtons = (LinearLayout) findViewById(R.id.dialog_rating_buttons);
-        feedbackButtons = (LinearLayout) findViewById(R.id.dialog_rating_feedback_buttons);
+        tvTitle = findViewById(R.id.dialog_rating_title);
+        tvNegative = findViewById(R.id.dialog_rating_button_negative);
+        tvPositive = findViewById(R.id.dialog_rating_button_positive);
+        tvFeedback = findViewById(R.id.dialog_rating_feedback_title);
+        tvSubmit = findViewById(R.id.dialog_rating_button_feedback_submit);
+        tvCancel = findViewById(R.id.dialog_rating_button_feedback_cancel);
+        ratingBar = findViewById(R.id.dialog_rating_rating_bar);
+        ivIcon = findViewById(R.id.dialog_rating_icon);
+        etFeedback = findViewById(R.id.dialog_rating_feedback);
+        ratingButtons = findViewById(R.id.dialog_rating_buttons);
+        feedbackButtons = findViewById(R.id.dialog_rating_feedback_buttons);
 
         init();
     }
@@ -186,6 +186,7 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
     public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
 
 
+        boolean thresholdPassed = true;
         if (ratingBar.getRating() >= threshold) {
             thresholdPassed = true;
 
@@ -281,7 +282,6 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
 
     @Override
     public void show() {
-
         if (checkIfSessionMatches(session)) {
             super.show();
         }

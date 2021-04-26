@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,10 +9,10 @@
     android:orientation="vertical"
     tools:context="com.codemybrainsout.rating.MainActivity">
 
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
-        android:elevation="4dp">
+        app:elevation="4dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -22,19 +23,20 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="15dp"
-                android:src="@drawable/ic_menu" />
+                android:src="@drawable/ic_menu"
+                android:layout_marginStart="15dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_gravity="center"
-                android:text="Settings"
+                android:text="@string/settings"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
         </RelativeLayout>
 
-    </android.support.design.widget.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -42,7 +44,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <RelativeLayout
@@ -52,12 +54,13 @@
                 android:background="@color/white"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
-                android:padding="15dp">
+                android:padding="15dp"
+                android:focusable="true">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Edit Profile"
+                    android:text="@string/edit_profile"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -70,12 +73,13 @@
                 android:background="@color/white"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
-                android:padding="15dp">
+                android:padding="15dp"
+                android:focusable="true">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Your Status"
+                    android:text="@string/your_status"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -88,13 +92,14 @@
                 android:background="@color/white"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
-                android:padding="15dp">
+                android:padding="15dp"
+                android:focusable="true">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="Push Notifications"
+                    android:text="@string/push_notifications"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -103,7 +108,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_arrow" />
+                    android:src="@drawable/ic_arrow"
+                    android:layout_alignParentEnd="true" />
 
             </RelativeLayout>
 
@@ -114,13 +120,14 @@
                 android:background="@color/white"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
-                android:padding="15dp">
+                android:padding="15dp"
+                android:focusable="true">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="Do Not Disturb"
+                    android:text="@string/do_not_disturb"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -129,7 +136,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_arrow" />
+                    android:src="@drawable/ic_arrow"
+                    android:layout_alignParentEnd="true" />
 
             </RelativeLayout>
 
@@ -140,13 +148,14 @@
                 android:background="@color/white"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
-                android:padding="15dp">
+                android:padding="15dp"
+                android:focusable="true">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="Advanced"
+                    android:text="@string/advanced"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -155,7 +164,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_arrow" />
+                    android:src="@drawable/ic_arrow"
+                    android:layout_alignParentEnd="true" />
 
             </RelativeLayout>
 
@@ -166,13 +176,14 @@
                 android:background="@color/white"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
-                android:padding="15dp">
+                android:padding="15dp"
+                android:focusable="true">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="Submit Feedback"
+                    android:text="@string/submit_feedback"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -181,7 +192,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_arrow" />
+                    android:src="@drawable/ic_arrow"
+                    android:layout_alignParentEnd="true" />
 
             </RelativeLayout>
 
@@ -193,13 +205,14 @@
                 android:background="@color/white"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
-                android:padding="15dp">
+                android:padding="15dp"
+                android:focusable="true">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="Rate Us"
+                    android:text="@string/rate_us"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -208,7 +221,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_arrow" />
+                    android:src="@drawable/ic_arrow"
+                    android:layout_alignParentEnd="true" />
 
             </RelativeLayout>
 
@@ -219,13 +233,14 @@
                 android:background="@color/white"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
-                android:padding="15dp">
+                android:padding="15dp"
+                android:focusable="true">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="Help"
+                    android:text="@string/help"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -234,7 +249,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_arrow" />
+                    android:src="@drawable/ic_arrow"
+                    android:layout_alignParentEnd="true" />
 
             </RelativeLayout>
 
@@ -246,13 +262,14 @@
                 android:clickable="true"
                 android:layout_marginBottom="15dp"
                 android:foreground="?attr/selectableItemBackground"
-                android:padding="15dp">
+                android:padding="15dp"
+                android:focusable="true">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="About"
+                    android:text="@string/about"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -261,13 +278,13 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_arrow" />
+                    android:src="@drawable/ic_arrow"
+                    android:layout_alignParentEnd="true" />
 
             </RelativeLayout>
 
         </LinearLayout>
 
     </ScrollView>
-
 
 </LinearLayout>

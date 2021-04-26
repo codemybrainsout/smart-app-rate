@@ -1,24 +1,24 @@
 package com.codemybrainsout.rating;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.codemybrainsout.ratingdialog.RatingDialog;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
-    private RelativeLayout rlRate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        rlRate = (RelativeLayout) findViewById(R.id.rlRate);
+        RelativeLayout rlRate = findViewById(R.id.rlRate);
         rlRate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private void showDialog() {
 
         final RatingDialog ratingDialog = new RatingDialog.Builder(this)
-                .session(3)
+                //.session(3)
                 .threshold(3)
                 .ratingBarColor(R.color.yellow)
                 .playstoreUrl("https://github.com/codemybrainsout/smart-app-rate")
