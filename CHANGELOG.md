@@ -1,7 +1,10 @@
 # Changelog
 
-## Version 1.0.9
-- Migrate library from Jcenter to Maven Central
-- Update dependencies to AndroidX
+## Version 1.1.2
+- Migrate library from JCenter to Maven Central
 - Update targetSdkVersion to 30
 - Fix warnings
+
+## Version 1.1.1
+- Update dependencies to AndroidX
+- Dark mode support
