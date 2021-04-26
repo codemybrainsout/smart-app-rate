@@ -8,7 +8,7 @@
     android:orientation="vertical"
     tools:context="com.codemybrainsout.rating.MainActivity">
 
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         android:elevation="4dp">
@@ -30,11 +30,11 @@
                 android:layout_centerInParent="true"
                 android:layout_gravity="center"
                 android:text="Settings"
-                android:textColor="@color/black"
+                android:textColor="@android:color/black"
                 android:textSize="20sp" />
         </RelativeLayout>
 
-    </android.support.design.widget.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -49,7 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:background="@color/white"
+                android:background="@android:color/white"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 android:padding="15dp">
@@ -58,7 +58,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Edit Profile"
-                    android:textColor="@color/black"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
             </RelativeLayout>
@@ -67,7 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0.5dp"
-                android:background="@color/white"
+                android:background="@android:color/white"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 android:padding="15dp">
@@ -76,7 +76,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Your Status"
-                    android:textColor="@color/black"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
             </RelativeLayout>
@@ -85,7 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:background="@color/white"
+                android:background="@android:color/white"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 android:padding="15dp">
@@ -95,7 +95,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="Push Notifications"
-                    android:textColor="@color/black"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -111,7 +111,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0.5dp"
-                android:background="@color/white"
+                android:background="@android:color/white"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 android:padding="15dp">
@@ -121,7 +121,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="Do Not Disturb"
-                    android:textColor="@color/black"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -137,7 +137,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0.5dp"
-                android:background="@color/white"
+                android:background="@android:color/white"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 android:padding="15dp">
@@ -147,7 +147,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="Advanced"
-                    android:textColor="@color/black"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -163,7 +163,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:background="@color/white"
+                android:background="@android:color/white"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 android:padding="15dp">
@@ -173,7 +173,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="Submit Feedback"
-                    android:textColor="@color/black"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -190,7 +190,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0.5dp"
-                android:background="@color/white"
+                android:background="@android:color/white"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 android:padding="15dp">
@@ -200,7 +200,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="Rate Us"
-                    android:textColor="@color/black"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -216,7 +216,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0.5dp"
-                android:background="@color/white"
+                android:background="@android:color/white"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 android:padding="15dp">
@@ -226,7 +226,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="Help"
-                    android:textColor="@color/black"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -242,7 +242,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0.5dp"
-                android:background="@color/white"
+                android:background="@android:color/white"
                 android:clickable="true"
                 android:layout_marginBottom="15dp"
                 android:foreground="?attr/selectableItemBackground"
@@ -253,7 +253,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="About"
-                    android:textColor="@color/black"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <ImageView

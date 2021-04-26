@@ -1,10 +1,11 @@
 package com.codemybrainsout.rating;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.codemybrainsout.ratingdialog.RatingDialog;
 
@@ -30,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
     private void showDialog() {
 
         final RatingDialog ratingDialog = new RatingDialog.Builder(this)
-                .session(3)
-                .threshold(3)
+                .session(1)
+                .threshold(4)
                 .ratingBarColor(R.color.yellow)
                 .playstoreUrl("https://github.com/codemybrainsout/smart-app-rate")
                 .onRatingBarFormSumbit(new RatingDialog.Builder.RatingDialogFormListener() {

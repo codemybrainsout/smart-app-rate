@@ -99,7 +99,7 @@ Add it as a dependency in your app's build.gradle file
 
 ```groovy
 dependencies {
-    compile 'com.codemybrainsout.rating:ratingdialog:1.0.8'
+    compile 'com.codemybrainsout.rating:ratingdialog:1.1.1'
 }
 ```
 
