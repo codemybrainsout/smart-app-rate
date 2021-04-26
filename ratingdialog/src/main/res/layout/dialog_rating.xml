@@ -50,7 +50,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginTop="15dp"
-            android:textColor="@color/black"
+            android:textColor="@color/textColor"
             android:textSize="18sp"
             android:visibility="gone" />
 
@@ -70,7 +70,7 @@
             android:minLines="6"
             android:padding="10dp"
             android:scrollbars="vertical"
-            android:textColorHint="@color/grey_400"
+            android:textColorHint="@android:color/darker_gray"
             android:visibility="gone" />
 
         <LinearLayout

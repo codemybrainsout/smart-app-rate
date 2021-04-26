@@ -5,6 +5,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.codemybrainsout.ratingdialog.RatingDialog;
 
 import androidx.appcompat.app.AppCompatActivity;

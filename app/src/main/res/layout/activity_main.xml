@@ -32,7 +32,7 @@
                 android:layout_centerInParent="true"
                 android:layout_gravity="center"
                 android:text="@string/settings"
-                android:textColor="@color/black"
+                android:textColor="@android:color/black"
                 android:textSize="20sp" />
         </RelativeLayout>
 
@@ -51,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:background="@color/white"
+                android:background="@android:color/white"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 android:padding="15dp"
@@ -61,7 +61,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/edit_profile"
-                    android:textColor="@color/black"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
             </RelativeLayout>
@@ -70,7 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0.5dp"
-                android:background="@color/white"
+                android:background="@android:color/white"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 android:padding="15dp"
@@ -80,7 +80,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/your_status"
-                    android:textColor="@color/black"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
             </RelativeLayout>
@@ -89,7 +89,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:background="@color/white"
+                android:background="@android:color/white"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 android:padding="15dp"
@@ -100,7 +100,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="@string/push_notifications"
-                    android:textColor="@color/black"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -117,7 +117,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0.5dp"
-                android:background="@color/white"
+                android:background="@android:color/white"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 android:padding="15dp"
@@ -128,7 +128,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="@string/do_not_disturb"
-                    android:textColor="@color/black"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -145,7 +145,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0.5dp"
-                android:background="@color/white"
+                android:background="@android:color/white"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 android:padding="15dp"
@@ -156,7 +156,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="@string/advanced"
-                    android:textColor="@color/black"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -173,7 +173,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:background="@color/white"
+                android:background="@android:color/white"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 android:padding="15dp"
@@ -184,7 +184,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="@string/submit_feedback"
-                    android:textColor="@color/black"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -202,7 +202,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0.5dp"
-                android:background="@color/white"
+                android:background="@android:color/white"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 android:padding="15dp"
@@ -213,7 +213,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="@string/rate_us"
-                    android:textColor="@color/black"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -230,7 +230,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0.5dp"
-                android:background="@color/white"
+                android:background="@android:color/white"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 android:padding="15dp"
@@ -241,7 +241,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="@string/help"
-                    android:textColor="@color/black"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -258,7 +258,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0.5dp"
-                android:background="@color/white"
+                android:background="@android:color/white"
                 android:clickable="true"
                 android:layout_marginBottom="15dp"
                 android:foreground="?attr/selectableItemBackground"
@@ -270,7 +270,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="@string/about"
-                    android:textColor="@color/black"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
                 <ImageView
