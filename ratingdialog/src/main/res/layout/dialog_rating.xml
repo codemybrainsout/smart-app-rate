@@ -91,7 +91,8 @@
                 android:foreground="?attr/selectableItemBackground"
                 android:gravity="center"
                 android:padding="15dp"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:focusable="true" />
 
             <TextView
                 android:id="@+id/dialog_rating_button_feedback_submit"
@@ -102,7 +103,8 @@
                 android:foreground="?attr/selectableItemBackground"
                 android:gravity="center"
                 android:padding="15dp"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:focusable="true" />
 
         </LinearLayout>
 
@@ -123,7 +125,8 @@
                 android:clickable="true"
                 android:gravity="center"
                 android:padding="15dp"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:focusable="true" />
 
             <TextView
                 android:id="@+id/dialog_rating_button_positive"
@@ -134,7 +137,8 @@
                 android:clickable="true"
                 android:gravity="center"
                 android:padding="15dp"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:focusable="true" />
 
         </LinearLayout>
 

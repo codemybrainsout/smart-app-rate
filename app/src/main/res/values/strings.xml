@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">Smart App Rate</string>
+    <string name="app_name" translatable="false">Smart App Rate</string>
+    <string name="settings" translatable="false">Settings</string>
+    <string name="edit_profile" translatable="false">Edit Profile</string>
+    <string name="your_status" translatable="false">Your Status</string>
+    <string name="push_notifications" translatable="false">Push Notifications</string>
+    <string name="do_not_disturb" translatable="false">Do Not Disturb</string>
+    <string name="advanced" translatable="false">Advanced</string>
+    <string name="submit_feedback" translatable="false">Submit Feedback</string>
+    <string name="rate_us" translatable="false">Rate Us</string>
+    <string name="help" translatable="false">Help</string>
+    <string name="about" translatable="false">About</string>
 </resources>

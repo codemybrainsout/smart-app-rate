@@ -1,2 +1,1 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.codemybrainsout.ratingdialog"/>
+<manifest package="com.codemybrainsout.ratingdialog" />
