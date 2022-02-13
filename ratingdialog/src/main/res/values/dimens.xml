@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="icon_size">100dp</dimen>
+    <dimen name="margin_default">16dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+    <dimen name="text_size_title_1">20sp</dimen>
+    <dimen name="text_size_title_2">18sp</dimen>
+    <dimen name="text_size_button">15sp</dimen>
+    <dimen name="form_height">100dp</dimen>
+</resources>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_feedback"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:visibility="gone"
+    tools:visibility="visible">
+
+    <TextView
+        android:id="@+id/dialog_rating_feedback_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_default"
+        android:layout_marginTop="@dimen/margin_default"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="@dimen/text_size_title_2"
+        tools:text="@string/rating_dialog_feedback_title" />
+
+    <EditText
+        android:id="@+id/dialog_rating_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_height"
+        android:layout_marginHorizontal="@dimen/margin_default"
+        android:layout_marginTop="@dimen/margin_default"
+        android:background="@drawable/edittext_background"
+        android:gravity="top|left"
+        android:inputType="textMultiLine|textCapSentences"
+        android:lines="8"
+        android:maxLines="10"
+        android:minLines="6"
+        android:padding="@dimen/margin_small"
+        android:scrollbars="vertical"
+        android:textColor="@color/feedbackTextColor"
+        android:textColorHint="@color/hintTextColor"
+        tools:hint="@string/rating_dialog_suggestions" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/dialog_rating_button_feedback_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:padding="@dimen/margin_default"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="@dimen/text_size_button"
+            tools:text="@string/rating_dialog_cancel" />
+
+        <TextView
+            android:id="@+id/dialog_rating_button_feedback_submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:padding="@dimen/margin_default"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_size_button"
+            tools:text="@string/rating_dialog_submit" />
+    </LinearLayout>
+
+</LinearLayout>

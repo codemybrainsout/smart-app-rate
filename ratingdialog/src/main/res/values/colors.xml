@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="grey_500">#9E9E9E</color>
-    <color name="grey_200">#EEEEEE</color>
-    <color name="grey_400">#BDBDBD</color>
-    <color name="accent">#EC2045</color>
-    <color name="textColor">#000000</color>
-    <color name="contentBackground">#FFFFFF</color>
-    <color name="textField">#FFFFFF</color>
+    <color name="colorAccent">#EC2045</color>
+    <color name="primaryTextColor">#000000</color>
+    <color name="secondaryTextColor">#9E9E9E</color>
+    <color name="strokeColor">#9E9E9E</color>
+    <color name="feedbackTextColor">#000000</color>
+    <color name="hintTextColor">#9E9E9E</color>
+    <color name="contentBackgroundColor">#FAFAFA</color>
+    <color name="textFieldColor">#FFFFFF</color>
+    <color name="buttonBackgroundColor">#FFFFFF</color>
+    <color name="ratingBarColor">#FFD600</color>
+    <color name="cardBackgroundColor">#FFFFFF</color>
 
 </resources>

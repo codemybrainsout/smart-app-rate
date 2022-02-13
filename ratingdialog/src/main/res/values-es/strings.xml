@@ -6,4 +6,5 @@
     <string name="rating_dialog_submit">Enviar</string>
     <string name="rating_dialog_cancel">Cancelar</string>
     <string name="rating_dialog_suggestions">Explicanos que salió mal y trabajaremos en ello!</string>
+    <string name="error_no_google_play">¡Error! No se pudo encontrar Google Play en este dispositivo.</string>
 </resources>
