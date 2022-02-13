@@ -7,4 +7,5 @@
     <string name="rating_dialog_submit">Abschicken</string>
     <string name="rating_dialog_cancel">Abbrechen</string>
     <string name="rating_dialog_suggestions">Sagen Sie uns was Ihnen nicht gefällt und wir arbeiten daran!</string>
+    <string name="error_no_google_play">Fehler! Google Play konnte auf diesem Gerät nicht gefunden werden.</string>
 </resources>

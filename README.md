@@ -1,11 +1,12 @@
 # Smart App Rate
 
-Smart app rate dialog for Android which takes user rating into consideration. If the user rates the app below the defined threshold rating, the dialog will change into a feedback form. Otherwise, It will take the user to the
-Google PlayStore.
+Smart app rate dialog for Android which takes user rating into consideration. If the user rates the app below the defined threshold rating, the dialog will change into a feedback form. Otherwise, It
+will take the user to the Google PlayStore.
 
 ![](preview/preview.png)
 
 ## Features
+
 - Auto fetches the app icon to appear on top of the dialog
 - Make the dialog appear on a defined app session
 - Opens Feedback form if the user rates below the minimum threshold
@@ -14,79 +15,53 @@ Google PlayStore.
 - Customizable button colors and backgrounds
 - Override dialog redirection to Google Play or Feedback form according to your needs
 
-If you want the dialog to appear on the Nth session of the app, just add the `session(N)` to the dialog builder method
- and move the code to the `onCreate()` method of your Activity class. The dialog will appear when the app is opened for the Nth time.
+If you want the dialog to appear on the Nth session of the app, just add the `session(N)` to the dialog builder method and move the code to the `onCreate()` method of your Activity class. The dialog
+will appear when the app is opened for the Nth time.
 
 ## How to use
 
 Use the dialog as it is
 
-```java
+```kotlin
 
-final RatingDialog ratingDialog = new RatingDialog.Builder(this)
-                .threshold(3)
-                .session(7)
-                .onRatingBarFormSumbit(new RatingDialog.Builder.RatingDialogFormListener() {
-                    @Override
-                    public void onFormSubmitted(String feedback) {
+val ratingDialog: RatingDialog = RatingDialog.Builder(this)
+    .threshold(3)
+    .session(1)
+    .onRatingBarFormSubmit { feedback -> Log.i(TAG, "onRatingBarFormSubmit: $feedback") }
+    .build()
 
-                    }
-                }).build();
-
-        ratingDialog.show();
+ratingDialog.show()
 
 ```
 
 or use the dialog builder class to customize the rating dialog to match your app's UI.
 
-```java
-final RatingDialog ratingDialog = new RatingDialog.Builder(this)
-                        .icon(drawable)
-                        .session(7)
-                        .threshold(3)
-                        .title("How was your experience with us?")
-                        .titleTextColor(R.color.black)
-                        .positiveButtonText("Not Now")
-                        .negativeButtonText("Never")
-                        .positiveButtonTextColor(R.color.white)
-                        .negativeButtonTextColor(R.color.grey_500)
-                        .formTitle("Submit Feedback")
-                        .formHint("Tell us where we can improve")
-                        .formSubmitText("Submit")
-                        .formCancelText("Cancel")
-                        .ratingBarColor(R.color.yellow)
-                        .playstoreUrl("YOUR_URL")
-                        .onThresholdCleared(new RatingDialog.Builder.RatingThresholdClearedListener() {
-                                           @Override
-                                           public void onThresholdCleared(RatingDialog ratingDialog, float rating, boolean thresholdCleared) {
-                                               //do something
-                                               ratingDialog.dismiss();
-                                           }
-                                       })
-                        .onThresholdFailed(new RatingDialog.Builder.RatingThresholdFailedListener() {
-                                           @Override
-                                           public void onThresholdFailed(RatingDialog ratingDialog, float rating, boolean thresholdCleared) {
-                                               //do something
-                                               ratingDialog.dismiss();
-                                           }
-                                       })
-                        .onRatingChanged(new RatingDialog.Builder.RatingDialogListener() {
-                                            @Override
-                                            public void onRatingSelected(float rating, boolean thresholdCleared) {
+```kotlin
+val ratingDialog = RatingDialog.Builder(this)
+    .icon(R.mipmap.ic_launcher)
+    .session(session)
+    .threshold(3)
+    .title(text = R.string.rating_dialog_experience, textColor = R.color.primaryTextColor)
+    .positiveButton(text = R.string.rating_dialog_maybe_later, textColor = R.color.colorPrimary, background = R.drawable.button_selector_positive)
+    .negativeButton(text = R.string.rating_dialog_never, textColor = R.color.secondaryTextColor)
+    .formTitle(R.string.submit_feedback)
+    .formHint(R.string.rating_dialog_suggestions)
+    .feedbackTextColor(R.color.feedbackTextColor)
+    .formSubmitText(R.string.rating_dialog_submit)
+    .formCancelText(R.string.rating_dialog_cancel)
+    .ratingBarColor(R.color.ratingBarColor)
+    .playstoreUrl("YOUR_URL")
+    .onThresholdCleared { dialog, rating, thresholdCleared -> Log.i(TAG, "onThresholdCleared: $rating $thresholdCleared") }
+    .onThresholdFailed { dialog, rating, thresholdCleared -> Log.i(TAG, "onThresholdFailed: $rating $thresholdCleared") }
+    .onRatingChanged { rating, thresholdCleared -> Log.i(TAG, "onRatingChanged: $rating $thresholdCleared") }
+    .onRatingBarFormSubmit { feedback -> Log.i(TAG, "onRatingBarFormSubmit: $feedback") }
+    .build()
 
-                                            }
-                                       })
-                        .onRatingBarFormSumbit(new RatingDialog.Builder.RatingDialogFormListener() {
-                            @Override
-                            public void onFormSubmitted(String feedback) {
-
-                            }
-                        }).build();
-
-                ratingDialog.show();
+ratingDialog.show()
 ```
 
 ### Note
+
 * Don't use `session()` if you want to show the dialog on a click event.
 * Remove the `threshold()` from the builder if you don't want to show the feedback form to the user.
 * Use `onThresholdCleared()` to override the default redirection to Google Play.
@@ -95,11 +70,12 @@ final RatingDialog ratingDialog = new RatingDialog.Builder(this)
 ## Installation
 
 ### Gradle
+
 Add it as a dependency in your app's build.gradle file
 
 ```groovy
 dependencies {
-    implementation 'com.codemybrainsout.rating:ratingdialog:1.1.0'
+    implementation 'com.codemybrainsout.rating:ratingdialog:2.0.0'
 }
 ```
 
@@ -116,6 +92,7 @@ Follow us on:
 Author: [Rahul Juneja](https://github.com/ahulr)
 
 # License
+
 ```
 Copyright (C) 2016 Code My Brains Out
 

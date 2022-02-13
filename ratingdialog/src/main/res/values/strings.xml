@@ -7,4 +7,6 @@
     <string name="rating_dialog_submit">Submit</string>
     <string name="rating_dialog_cancel">Cancel</string>
     <string name="rating_dialog_suggestions">Suggest us what went wrong and we\'ll work on it!</string>
+    <string name="error_no_google_play">Error! Couldn\'t find Google Play on this device.</string>
+    <string name="market_prefix" translatable="false">market://details?id=</string>
 </resources>
