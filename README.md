@@ -108,3 +108,9 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ```
+### Apps that use smart-app-rate
+Please send a pull request to add your apps to this list.
+* [Minesweeper](https://play.google.com/store/apps/details?id=com.popoko.minesweeper)
+* [Chess](https://play.google.com/store/apps/details?id=com.popoko.chessru)
+* [Gomoku](https://play.google.com/store/apps/details?id=com.popoko.gomokukr)
+* [Tic Tac Toe ⑤](https://play.google.com/store/apps/details?id=com.popoko.gomokuvn) 
